@@ -80,7 +80,7 @@ def build_ISM(hp_file='hp_DM_ISM.fits', ncpu=15):
 
 
     ls = coords.l.value
-    bs = coords.l.value
+    bs = coords.b.value
     inps = []
     for kk in range(len(ls)):
         inps.append((ls[kk], bs[kk]))

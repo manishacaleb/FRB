@@ -72,6 +72,7 @@ def build_ISM(hp_file='hp_DM_ISM.fits', ncpu=15):
 
     # Various models
     n_eval = 12 * 128**2
+    #n_eval = 12 * 32**2
     nside = hp.npix2nside(n_eval)
     lons, lats = hp.pix2ang(nside, np.arange(n_eval), lonlat=True)
 
@@ -286,9 +287,9 @@ if __name__ == '__main__':
 
     flg_anly = 0
     if len(sys.argv) == 1:
-        #flg_anly += 2**0   # Galactic ISM
+        flg_anly += 2**0   # Galactic ISM
         #flg_anly += 2**1   # LGM
-        flg_anly += 2**2   # LG with our Galaxy
+        #flg_anly += 2**2   # LG with our Galaxy
 
     if flg_anly & (2**0):
         build_ISM()
